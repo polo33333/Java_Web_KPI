@@ -81,7 +81,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                        <li><a href="home.jsp"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="quanlykpi.jsp"> <span class="glyphicon glyphicon-book"></span> Quản Lý KPI <span class="caret"></span></a>
                             <ul class="dropdown-menu">
