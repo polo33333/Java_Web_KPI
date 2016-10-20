@@ -181,6 +181,13 @@
                 <dir class="row">
                     <h2>Công việc </h2>
                     <p>Quản lý công việc của bạn mọi lúc mọi nơi !</p> 
+                    <div class="panel panel-default">
+					    <div class="panel-body">Công việc a</div>
+					  </div>
+					   <div class="panel panel-primary">
+					    <div class="panel-body">Công việc b</div>
+					  </div>
+            </div>
                 </div>
                 </div>
                 </dir>
