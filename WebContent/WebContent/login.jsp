@@ -1,6 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+    pageEncoding="utf-8"
+    import="PackageLogin.UserBean"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <title>KPI Web | Đăng nhập</title>
@@ -26,18 +27,16 @@
                 <div class="account-wall">
                     <img class="profile-img" src="images/user.jpg">
                     <form class="form-signin">
-                        <input type="text" class="form-control" placeholder="Email" required autofocus>
-                        <input type="password" class="form-control" placeholder="Password" required>
-                        <select class="form-control">
+                        <input type="text" name="email" class="form-control" placeholder="Email" required autofocus>
+                        <input type="password" name="pw" class="form-control" placeholder="Password" required>
+                        <select class="form-control" name="role">
                         <option value="Month">Chức vụ</option>
                         <option value="ht">Hiệu trưởng</option>
                         <option value="tk">Trưởng khoa</option>
                         <option value="tbm">Trưởng bộ môn</option>
                         <option value="gv">Giảng viên</option>
                     </select>
-                        <a class="btn btn-lg btn-primary btn-block" href="tongquan.jsp" target="_blank"> Đăng nhập   
-                     </a>
-                    
+                    	<input class="btn btn-lg btn-primary btn-block" type="submit" value="Đăng nhập"> 
                     <label class="checkbox pull-left">
                         <input type="checkbox" value="remember-me">
                         Ghi nhớ tôi !
