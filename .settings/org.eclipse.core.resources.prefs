@@ -14,6 +14,7 @@ encoding//src/webkpi/servlets/DoCreateTieuChiServlet.java=UTF-8
 encoding//src/webkpi/servlets/DoDangKyTieuChiKPIServlet.java=UTF-8
 encoding//src/webkpi/servlets/DoEditBieuMauServlet.java=UTF-8
 encoding//src/webkpi/servlets/DoEditTieuChiServlet.java=UTF-8
+encoding//src/webkpi/servlets/DoHuyDangKyTieuChiKPIServlet.java=UTF-8
 encoding//src/webkpi/servlets/DoLoginServlet.java=UTF-8
 encoding//src/webkpi/servlets/EditBieuMauServlet.java=UTF-8
 encoding//src/webkpi/servlets/EditTieuChiServlet.java=UTF-8

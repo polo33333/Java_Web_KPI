@@ -49,6 +49,7 @@
 										<th>Người tạo</th>
 										<th>Trạng thái</th>
 										<th>Đăng ký</th>
+										<th> Hủy đăng ký</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -64,20 +65,27 @@
 											<td>${tieuchi.diemht}</td>
 											<td>${tieuchi.userdky}</td>
 											<td>${tieuchi.trangthai}</td>
-											<td><a href="doDangKyTieuChiKPI?matieuchi=${tieuchi.matieuchi}"><button type="button" class="btn btn-warning">Đăng ký</button></a>
+											<td><a href="doDangKyTieuChiKPI?mabieumau=${tieuchi.mabieumau}&matieuchi=${tieuchi.matieuchi}"><button type="button" class="btn btn-warning">Đăng ký</button></a>
+											</td>
+											<td><a href="doHuyDangKyTieuChiKPI?mabieumau=${tieuchi.mabieumau}&matieuchi=${tieuchi.matieuchi}"><button type="button" id="btn2" class="btn btn-danger">Hủy đăng ký</button></a>
 											</td>
 										</tr>
+										
+				
 									</c:forEach>
 								</tbody>
 							</table>
 							
-							<a href="DangKyKPI"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-left" aria-hidden="true"> Go Back</i></button></a>
+							<a href="DangKyKPI"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-left"> Go Back</i></button></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		</div>
 		<!-- end content -->
 		<jsp:include page="_footer.jsp"></jsp:include>
+		
+
 </body>
 </html>

@@ -78,7 +78,7 @@
 								</tbody>
 							</table>
 
-							<a href="createTieuChi""><button type="button" class="btn btn-danger">Tạo Tiêu Chí</button></a>
+							<a href="createTieuChi"><button type="button" class="btn btn-danger">Tạo Tiêu Chí</button></a>
 						</div>
 					</div>
 				</div>

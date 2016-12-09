@@ -130,8 +130,7 @@
 							<div class="input-group margin-bottom-sm">
 								<span class="input-group-addon"> <i
 									class="fa fa-envelope-o fa-fw"></i>
-								</span> <input class="form-control" type="text"
-									value="${user.email }">
+								</span> <input class="form-control" type="text" value="${user.email }">
 							</div>
 						</div>
 
@@ -140,20 +139,36 @@
 						<div class="col-md-3">
 							<h4>Chức vụ:</h4>
 						</div>
-                        <div class="col-md-8">
-							<input class="form-control" id="disabledInput" type="text"
-								value="${user.roleid}">
+						<div class="col-md-8">
+							<input class="form-control" type="text" id="chucvu">
 						</div>
-						</div>
-
 					</div>
 
 				</div>
 
-
 			</div>
 		</div>
-		</div>
-		<jsp:include page="_footer.jsp"></jsp:include>
+	</div>
+	<jsp:include page="_footer.jsp"></jsp:include>
+	<!-- chuyen doi  gia tri thanh user -->
+	<script type="text/javascript">
+	 $(document).ready(function(){
+			 switch (${user.roleid}) {
+			    case 1: s="Giảng Viên";
+			    break;
+			    case 2: s="Trưởng Bộ Môn";
+			    break;
+			    case 3: s="Trưởng Khoa";
+			    break;
+			    case 4: s="Phòng TCCB";
+			    break;
+			    case 5: s="Hiệu Trưởng";
+			    break;
+			    case 6: s="ADMIN";
+			    break;
+			}
+		 $("#chucvu").val(s);
+		  });
+</script>
 </body>
 </html>
