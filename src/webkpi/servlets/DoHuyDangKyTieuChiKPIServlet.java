@@ -61,7 +61,7 @@ public class DoHuyDangKyTieuChiKPIServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 		// Nếu mọi thứ tốt đẹp.
-		// Redirect sang trang danh sách sản phẩm.
+		// Redirect sang trang danh sách KPI.
 		else { 
 //			response.sendRedirect(request.getContextPath() + "/DangKyKPI");
 			response.sendRedirect(request.getContextPath() +"/doDangKyKPI?mabieumau="+mabieumau);
