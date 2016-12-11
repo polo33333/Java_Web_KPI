@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>KPI Web | Quản Lý KPI</title>
 <link type="image/x-icon" href="images/k-52.ico" rel="shortcut icon" />
+
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Cookie">

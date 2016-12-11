@@ -17,7 +17,7 @@
                     </li>
                     <li role="presentation"><a href="${pageContext.request.contextPath}/BieuMauList"><span class="fa fa-table"></span> Quản Lý KPI</a></li>
                     <li role="presentation">
-                        <a href="duyetkpi.jsp" class="custom-navbar"> <span class="glyphicon glyphicon-ok"></span> Duyệt KPI<span class="badge">2 </span></a>
+                        <a href="${pageContext.request.contextPath}/DuyetKPI" class="custom-navbar"> <span class="glyphicon glyphicon-ok"></span> Duyệt KPI<span class="badge">2 </span></a>
                     </li>
                     <li role="presentation"><a href="${pageContext.request.contextPath}/DangKyKPI"><span class="glyphicon glyphicon-signal"></span> Đăng Kí KPI</a></li>
                 </ul>

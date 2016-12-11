@@ -64,7 +64,27 @@ public class DBUtils {
 	      }
 	      return null;
 	  }
+// List user
+	  public static List<UserAccount> queryUserAccount(Connection conn) throws SQLException {
+	      String sql = "Select a.Username, a.Hoten,a.Roleid from User_Account a ";
 	 
+	      PreparedStatement pstm = conn.prepareStatement(sql);
+	 
+	      ResultSet rs = pstm.executeQuery();
+	      List<UserAccount> list = new ArrayList<UserAccount>();
+	      while (rs.next()) {
+	          String userName = rs.getString("Username");
+	          String hoten=rs.getString("Hoten");
+	          int roleid=Integer.parseInt(rs.getString("Roleid"));
+	          UserAccount useraccount = new UserAccount();
+	          useraccount.setUserName(userName);
+	          useraccount.setHoten(hoten);
+	          useraccount.setRoleid(roleid);
+	          list.add(useraccount);
+	      }
+	      return list;
+	  }
+//	  
 	  public static List<BieuMau> queryBieuMau(Connection conn) throws SQLException {
 	      String sql = "Select a.Mabieumau, a.Tenbieumau,a.Namhoc,a.Username from BieuMau a ";
 	 
@@ -87,6 +107,68 @@ public class DBUtils {
 	      return list;
 	  }
 //	 
+	  
+//	 LIST BIEU MAU OF USER
+	  public static List<BieuMau> queryBieuMauOfUser(Connection conn, String userdky) throws SQLException {
+	      String sql = "SELECT * FROM bieumau WHERE TENBIEUMAU IN (SELECT TENBIEUMAU FROM bieumau INNER JOIN tieuchi ON bieumau.MABIEUMAU = tieuchi.MABIEUMAU and tieuchi.USERDKY=? GROUP BY TENBIEUMAU HAVING COUNT(TENBIEUMAU) >=1) ORDER BY TENBIEUMAU";
+	 
+	      PreparedStatement pstm = conn.prepareStatement(sql);
+	      pstm.setString(1, userdky);
+	 
+	      ResultSet rs = pstm.executeQuery();
+	      List<BieuMau> list = new ArrayList<BieuMau>();
+	      while (rs.next()) {
+	          int mabieumau = rs.getInt("Mabieumau");
+	          String tenbieumau = rs.getString("Tenbieumau");
+	          String namhoc=rs.getString("Namhoc");
+	          String username=rs.getString("Username");
+	          BieuMau bieumau = new BieuMau();
+	          bieumau.setMabieumau(mabieumau);
+	          bieumau.setTenbieumau(tenbieumau);;
+	          bieumau.setNamhoc(namhoc);
+	          bieumau.setUsername(username);
+	          list.add(bieumau);
+	      }
+	      return list;
+	  }
+	  
+	//danh sach cai tieu chi theo bieu mau of user----dang lam
+	  public static List<TieuChi> queryListTieuChiOfUser(Connection conn,int Mabieumau) throws SQLException {
+	      String sql = "Select a.Matieuchi, a.Tentieuchi,a.Mabieumau,a.Diemgv,a.Diemtbm,a.Diemtk,a.Diemptccb,a.Diemht,a.Userdky,a.Trangthai from TieuChi a  where a.Mabieumau = ? and Trangthai=1  ";
+	 
+	      PreparedStatement pstm = conn.prepareStatement(sql);
+	      pstm.setInt(1,Mabieumau);
+	      ResultSet rs = pstm.executeQuery();
+	      List<TieuChi> list = new ArrayList<TieuChi>();
+	      while (rs.next()) {
+	    	  int matieuchi = rs.getInt("Matieuchi");
+	    	  String tentieuchi = rs.getString("Tentieuchi");
+	          int mabieumau = rs.getInt("Mabieumau");
+	          int diemgv = rs.getInt("Diemgv");
+	          int diemtbm = rs.getInt("Diemtbm");
+	          int diemtk = rs.getInt("Diemtk");
+	          int diemptccb = rs.getInt("Diemptccb");
+	          int diemht = rs.getInt("Diemht");
+	          
+	          
+	          String userdky=rs.getString("Userdky");
+	          int trangthai = rs.getInt("Trangthai");
+	          TieuChi tieuchi = new TieuChi();
+	          tieuchi.setMatieuchi(matieuchi);
+	          tieuchi.setTentieuchi(tentieuchi);
+	          tieuchi.setMabieumau(mabieumau);
+	          tieuchi.setDiemgv(diemgv);
+	          tieuchi.setDiemtbm(diemtbm);
+	          tieuchi.setDiemtk(diemtk);
+	          tieuchi.setDiemptccb(diemptccb);
+	          tieuchi.setDiemht(diemht);
+	          tieuchi.setUserdky(userdky);
+	          tieuchi.setTrangthai(trangthai);
+	          list.add(tieuchi);
+	      }
+	      return list;
+	  }
+//	
 	  public static BieuMau findBieuMau(Connection conn, int Mabieumau) throws SQLException {
 	      String sql = "Select a.Mabieumau, a.Tenbieumau, a.Namhoc,a.Username from BieuMau a where a.Mabieumau=?";
 	 

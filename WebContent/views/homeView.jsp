@@ -28,13 +28,6 @@
 	right: 10px;
 	top: 10px;
 }
-
-.Signup {
-	position: fixed;
-	right: 115px;
-	top: 10px;
-}
-
 body {
 	background-color: lightblue;
 }
@@ -48,10 +41,7 @@ img {
 </head>
 
 <body>
-	<div class="Signup">
-		<a class="btn btn-lg btn-success" href="signup.jsp" target="_blank"><span
-			class="glyphicon glyphicon-plus"></span> Sign up </a>
-	</div>
+	
 	<div class="login">
 		<a class="btn btn-lg btn-danger"
 			href="${pageContext.request.contextPath}/login"><span

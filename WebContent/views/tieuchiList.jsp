@@ -38,55 +38,67 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="table-responsive">
-							<table class="table table-bordered">
-								<thead>
-									<tr>
-										<th>Mã</th>
-										<th>Tên tiêu chí</th>
-										<th>Mã biểu mẫu</th>
-										<th>Điểm GV</th>
-										<th>Điểm TBM</th>
-										<th>Điểm TK</th>
-										<th>Điểm PTCCB</th>
-										<th>Điểm HT</th>
-										<th>Người tạo</th>
-										<th>Trạng thái</th>
-										<th>Edit</th>
-										<th>Delete</th>
-									</tr>
-								</thead>
-								<tbody>
-									<c:forEach items="${tieuchiList}" var="tieuchi">
+							<form method="POST" action="doeditTieuChi">
+								<table class="table table-bordered">
+									<thead>
 										<tr>
-											<td>${tieuchi.matieuchi}</td>
-											<td>${ tieuchi.tentieuchi}</td>
-											<td>${ tieuchi.mabieumau}</td>
-											<td>${tieuchi.diemgv}</td>
-											<td>${tieuchi.diemtbm}</td>
-											<td>${tieuchi.diemtk}</td>
-											<td>${tieuchi.diemptccb}</td>
-											<td>${tieuchi.diemht}</td>
-											<td>${tieuchi.userdky}</td>
-											<td>${tieuchi.trangthai}</td>
-											<td><a href="editTieuChi?matieuchi=${tieuchi.matieuchi}"><button
-														type="button" class="btn btn-primary">Edit</button></a></td>
-											<td><a
-												href="deleteTieuChi?matieuchi=${tieuchi.matieuchi}"><button
-														type="button" class="btn btn-warning">Delete</button></a></td>
+											<th>Mã</th>
+											<th>Tên tiêu chí</th>
+											<th>Mã biểu mẫu</th>
+											<th>Điểm GV</th>
+											<th>Điểm TBM</th>
+											<th>Điểm TK</th>
+											<th>Điểm PTCCB</th>
+											<th>Điểm HT</th>
+											<th>Người tạo</th>
+											<th>Trạng thái</th>
+											<th>Edit</th>
+											<th>Delete</th>
 										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-
-							<a href="createTieuChi"><button type="button" class="btn btn-danger">Tạo Tiêu Chí</button></a>
+									</thead>
+									<tbody>
+										<c:forEach items="${tieuchiList}" var="tieuchi">
+											<tr>
+												<td><input type="hidden" name="matieuchi"
+													value="${tieuchi.matieuchi}" />${tieuchi.matieuchi}</td>
+												<td><input    name="tentieuchi" size="15"
+													value="${tieuchi.tentieuchi}" /></td>
+												<td><input name="mabieumau" size="10"
+													value="${tieuchi.mabieumau}" /></td>
+												<td><input type="text" class="form-control" id="text"
+													name="diemgv" size="15" value="${tieuchi.diemgv}"></td>
+												<td><input type="text" class="form-control" id="text"
+													name="diemtbm" size="15" value="${tieuchi.diemtbm}"></td>
+												<td><input type="text" class="form-control" id="text"
+													name="diemtk"  size="15" value="${tieuchi.diemtk}"></td>
+												<td><input type="text" class="form-control" id="text"
+													name="diemptccb" size="15" value="${tieuchi.diemptccb}"></td>
+												<td><input type="text" class="form-control" id="text"
+													name="diemht" size="15" value="${tieuchi.diemht}"></td>
+												<td><input type="hidden" name="userdky"
+													value="${tieuchi.userdky}">${tieuchi.userdky}</td>
+												<td><input type="text" size="15" class="form-control" id="text"
+													name="trangthai" value="${tieuchi.trangthai}"></td>
+												<td><input type="submit" value="Cập nhật" class="btn btn-primary">
+											</td>
+												<td><a
+													href="deleteTieuChi?matieuchi=${tieuchi.matieuchi}"><button
+															type="button" class="btn btn-warning">Delete</button></a></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</form>
+							<a href="createTieuChi"><button type="button"
+									class="btn btn-danger">Tạo Tiêu Chí</button></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- end content -->
-		</div>
-			<jsp:include page="_footer.jsp"></jsp:include>
+	</div>
+	<jsp:include page="_footer.jsp"></jsp:include>
 
 </body>
 </html>

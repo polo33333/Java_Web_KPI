@@ -13,6 +13,12 @@ public class UserAccount {
 	public UserAccount() {
 
 	}
+	public UserAccount(String userName,String hoten,int roleid){
+		this.setUserName(userName);
+		this.setHoten(hoten);
+		this.setRoleid(roleid);
+	}
+	
 	public String getUserName() {
 		return userName;
 	}
